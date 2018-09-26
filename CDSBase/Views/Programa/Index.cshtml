@@ -1,0 +1,71 @@
+﻿
+<!-- Inicio del Formulario  -->
+<!-- En esta parte se deben agregar los controles necesarios para el ejercicio -->
+
+<form method="post" id="form">
+    <div class="row">
+        <div class="col-md-7 col-xs-12">
+            Promeido , Media , Y Porcentaje de n valores:
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <label>Ingrese el número 1:</label>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" name="numero1" autocomplete="off" />
+        </div>
+    </div>
+  
+    <br />
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-1 text-right">
+            <button class="btn">Ejecutar Mi Programa</button>
+        </div>
+    </div>
+</form>
+
+<!-- Fin del Formulario -->
+
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">Resultados:</div>
+            <div class="panel-body">
+                @ViewBag.Texto1
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <!-- En esta parte se agregan las validaciones necesarias para los tipos de datos que se ingresarán -->
+    <script type="text/javascript">
+        $("#form").validate({
+            rules: {
+                numero1: {
+                    required: true,
+                    digits: true
+                },
+                numero2: {
+                    required: true,
+                    digits: true
+                }
+               
+
+            }
+        });
+    </script>
+}
+
+

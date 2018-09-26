@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Mi Aplicación Web</title>    
+    <!-- #region Estilos -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- #endregion -->
+    
+</head>
+<body>
+
+    <!-- #region NavBar -->
+    <nav class="navbar navbar-default navbar-cass">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Mi Programa - Capítulo 1 - Lección 1 </a>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- #endregion -->
+    
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <!-- #region Scripts -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        jQuery.extend(jQuery.validator.messages, {
+            required: "Este campo es requerido.",
+            email: "Ingrese un correo electrónico válido.",
+            url: "Ingrese una url válida.",
+            date: "Ingrese una fecha válida.",
+            number: "Ingrese un número válido.",
+            digits: "Por favor ingrese un número entero.",
+            maxlength: jQuery.validator.format("Por favor no ingrese más de {0} caracteres."),
+            minlength: jQuery.validator.format("Por favor ingrese más de {0} caracteres."),
+            max: jQuery.validator.format("Por favor ingrese un número menor o igual que {0}."),
+            min: jQuery.validator.format("Por favor ingrese un número mayor o igual que {0}.")
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+    <!-- #endregion -->
+    
+</body>
+</html>
